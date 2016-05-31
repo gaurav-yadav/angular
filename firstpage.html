@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body >
+
+<div ng-app="demoApp" data-ng-init="quantity=1;price=5;" ng-controller="controllerRef">
+
+<h2>Cost Calculator</h2>
+
+Quantity: <input type="number" ng-model="quantity">
+Price: <input type="number" ng-model="price">
+distance<input type="number" ng-model="dist" ng-init="dist=1">
+
+<p><b>Total in dollar:</b> {{quantity * price *dist *5 }}</p>
+
+
+
+	Enter name :<input type="text" ng-model="nametext"> {{nametext}} this is the filter for name list
+		<UL>
+<li ng-repeat="printo in names | filter:nametext ">{{ printo.name |uppercase   }}</li>
+	</UL>	
+<div>
+	<script >
+var demoApp=angular.module('demoApp',[]);
+function simpleController($myScope){
+	$myScope.names=[
+		{name:'john Smith',city:'bengalore'},
+				{name:'john Smith',city:'belgaum'},
+						{name:'john doe',city:'dilli'},
+								{name:'john beill',city:'kolkata'},
+										{name:'john honk',city:'shimla'},
+	];
+	demoApp.controller('simpleController',controllerRef)
+}
+	</script>
+</div>
+</div>
+</body>
+</html>
